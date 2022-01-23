@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes and excercises week 03</title>
+</head>
+<body>
+    <div id="answer">
+        <h2>Objects -Chapter 5</h2>
+        parse() = JSON to Object <br>
+        stringify()  = Object to JSON
+        Math.abs() = removes de negative sign of a number
+    </div>
+    <hr>
+    <div>
+        <h2>Document Object Model - Chapter 6 </h2>
+        getElementsByTagName()<br>
+        const listItems = document.getElementsByTagName('li')<br>
+        getElementsByClassName() will return a live node list of all elements that have the class name that is supplied as an argument
+        <br>
+        <br>
+        After you assigned an element to a variable, you can use setAttribute() to change its values<br>
+        wonderWoman.setAttribute('class', 'villain')<br><br>
+        wonderWoman.getAttribute('class')<br>
+        This is also available ^<br><br>
+        And you can basically re build all of his attributes:<br>
+        wonderWoman.classList.add('warrior');<br>
+        wonderWoman.classList.remove('warrior');<br>
+        The toggle method is a particularly useful method that will add a class if an element doesn’t have it already, and remove the class if it does have it. <br>
+        <hr>
+        const flash = document.createElement('li');<br>
+        You can also create elements on the fly<br><br>
+        And Then add them<br>
+        
+        function createElement (tag,text) {<br>
+            const el = document.createElement(tag);<br>
+            el.textContent = text;<br>
+            return el<br>
+        }<br><br>
+        
+        appendChild()<br>
+        insertBefore()<br>
+        removeChild()<br>
+        insertAfter()<br><br><br>
+
+        Style Modifiers also work:<br><br>
+        superman.style.border('red 2px solid');<br>
+    </div>
+    <hr>
+    <div>
+        <h2>Events - Chapter 7</h2>
+        Inline events:
+        <p onclick="console.log('You Clicked Me!')">Click Me</p>
+        <br><br>
+        Element event listener:<br>
+        document.body.addEventListener('click',doSomething);
+        <br><br>
+        <p id="mouse">
+            Example
+        </p>
+        <script>
+            // const dblclickParagraph = document.getElementById('dblclick');
+            // dblclickParagraph.addEventListener('dblclick', highlight);
+
+            function highlight(event){
+                event.target.classList.toggle('highlight');
+            }
+            const mouseParagraph = document.getElementById('mouse');
+            mouseParagraph.addEventListener('mousemove', () =>  console.log('You Moved!') );
+            
+            mouseParagraph.addEventListener('mouseover', highlight);
+            mouseParagraph.addEventListener('mouseout', highlight);
+
+
+            // addEventListener('keypress', (event) => console.log(`You pressed the ${event.key} character`));
+            addEventListener('keydown', (event) => console.log(`You pressed the ${event.key} character`));
+        </script>
+        Keyboard Events:<br>
+
+        addEventListener('keydown',highlight);
+        <br><br>
+        Pressing the modifier keys such as Shift, Ctrl, Alt and meta (Cmd on Mac) will fire the keydown and keyup events, but not the keypress
+        <br>
+        When you click on an element, you are actually clicking on all the elements it’s nested inside of all the way up to the body
+        <br>
+        <br>
+        STOP BUBBLING<br>
+
+        The bubble phase can be stopped from occurring by adding the event.stopPropagation() method into the callback function. In the following example, the event will fail to propagate as the third argument is false, which stops capturing, and the event.stopPropagation() method is called, which stops bubbling:
+        <br><br>
+        liElement.addEventListener('click', (event) => {<br>
+        console.log('clicked on li');<br>
+        event.stopPropagation(); }, false);<br>
+
+    </div>
+
+    <script>
+        const cars = {name: "BMW M1", year: "2001"};
+        
+        console.table(cars);
+        console.log("Name: " + cars.name);
+        // document.getElementById('answer').innerHTML = cars;
+        cars['name'] = "Subaru";
+        console.log("Name2: " + cars.name);
+
+
+        const garage = {
+            BMW: {name: 'BMW M1', model: '2020', displacement: '3.0'},
+            Subaru: {name: 'Subaru WRX', model: '2022', displacement: '2.0'}
+        }
+
+        console.table(garage);
+        console.log(garage.BMW.name + " displacement: " + garage.BMW.displacement)
+
+
+        const myMaths = {
+
+            mean(array,callback) {
+                if (callback) {
+                    array.map( callback );
+                } 
+                //
+                const total = array.reduce((a, b) => a + b);
+                return total/array.length;
+            }
+        };
+
+        
+
+
+    </script>
+</body>
+</html>
