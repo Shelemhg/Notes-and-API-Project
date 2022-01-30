@@ -1,0 +1,122 @@
+        <div style="direction:ltr;margin-top:2.1847in;margin-left:.25in;width:4.593in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">FORMS - CHAPTER 8</p>
+            <p style="margin:0in;margin-left:.375in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.375in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.375in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.375in;font-family:Calibri;font-size:11.0pt">const input = form.elements.searchInput;</p>
+            <p style="margin:0in;margin-left:.375in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.375in;font-family:Calibri;font-size:11.0pt">input.addEventListener(&apos;focus&apos;, () =&gt; alert(&apos;focused&apos;), false);</p>
+            <p style="margin:0in;margin-left:.375in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.375in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+        </div>
+        <div style="direction:ltr;margin-top:1.0611in;margin-left:.5in;width:3.4812in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">const form = document.forms[&apos;search&apos;];</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">form.addEventListener (&apos;submit&apos;, search, false);</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">function search() {</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; alert(&apos; Form Submitted&apos;);</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">}</p>
+        </div>
+        <div style="direction:ltr;margin-top:.8701in;margin-left:.5in;width:3.2083in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Retrive and change values from Form</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">function search(event) {</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; alert(`You Searched for: ${input.value}`);</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; event.preventDefault();</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">}</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+        </div>
+        <div style="direction:ltr;margin-top:.6243in;margin-left:.5in;width:3.1763in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Disappearing placeholder</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">input.addEventListener(&apos;focus&apos;, function(){</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; if (input.value===&apos;Search Here&apos;) {</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; input.value = &apos;&apos; </p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; }</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">}, false);</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">input.addEventListener(&apos;blur&apos;, function(){</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; if(input.value === &apos;&apos;) {</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; input.value = &apos;Search Here&apos;;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; } }, false);</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+        </div>
+        <div style="direction:ltr;margin-top:.3784in;margin-left:.5in;width:4.6062in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">OR</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&lt;input type=&apos;text&apos; name=&apos;search-box&apos; placeholder=&apos;Search Here&apos;&gt;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+        </div>
+        <div style="direction:ltr;margin-top:.5569in;margin-left:.5in;width:6.5in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">AUTO FOCUS ON LOAD</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&lt;input type=&apos;text&apos; id=&apos;heroName&apos; name=&apos;heroName&apos; autofocus placeholder=&apos;Your Super Hero Name&apos; maxlength=32&gt;</p>
+        </div>
+        <div style="direction:ltr;margin-top:1.243in;margin-left:.5in;width:6.6041in">
+            <p style="margin:0in;font-family:Roboto;font-size:10.0pt;color:#686868">Password Input Fields</p>
+            <p style="margin:0in"><span style="font-family:Consolas;font-size:10.0pt;
+color:#9B9FA6;background:#292D3E">input type=&apos;password&apos;</span><span style='font-family:"Libre Franklin";font-size:12.0pt;color:#686868'>&nbsp;is used to enter passwords or secret information. This works in the same way as an input field with&nbsp;</span><span style="font-family:Consolas;font-size:10.0pt;
+color:#9B9FA6;background:#292D3E">type=&apos;text&apos;</span><span style='font-family:
+"Libre Franklin";font-size:12.0pt;color:#686868'>, except the characters are concealed as they are entered so they&rsquo;re unable to be read on the screen.</span></p>
+        </div>
+        <div style="direction:ltr;margin-top:.9666in;margin-left:.5in;width:6.5in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Number input fields also have optional &apos;min&apos; and &apos;max&apos; attributes that can be used to limit the input given. The &apos;step&apos; attribute is used to specify how much the value changes by each click. Most modern browsers will add controls at the side of the input field so the value can be increased or decreased, as shown below.</p>
+        </div>
+        <div style="direction:ltr;margin-top:.993in;margin-left:.5in;width:4.5173in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Instrant Feedback</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">const label = form.querySelector(&apos;label&apos;);</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">const error = document.createElement(&apos;div&apos;);</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">error.classList.add(&apos;error&apos;);</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">error.textContent = &apos;! Your name is not allowed to start with X.&apos;;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">label.append(error);</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">function validateInline() {</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; const heroName = this.value.toUpperCase();</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; if(heroName.startsWith(&apos;X&apos;)){</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; error.style.display = &apos;block&apos;;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; } else {</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; error.style.display = &apos;none&apos;;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; }</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">}</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+        </div>
+        <div style="direction:ltr;margin-top:.5687in;margin-left:.5in;width:2.2604in"><img src="data:image/png;base64,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" width="217" height="126" alt="
+
+
+<style>
+    .error{
+        background: #f99;
+        border: #900 1px solid;
+        display: none;
+    }
+</style>
+"></div>
+        <div style="direction:ltr;margin-top:1.684in;margin-left:.5in;width:4.1118in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">function disableSubmit(event) {</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; if(event.target.value === &apos;&apos;){</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById(&apos;submit&apos;).disabled = true;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; } else {</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById(&apos;submit&apos;).disabled = false;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp; }</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">}</p>
+        </div>
+        <div style="direction:ltr;margin-top:.934in;margin-left:.25in;width:6.5in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">OBJECT-ORIENTED PROGRAMMING IN JAVASCRIPT</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Roboto;font-size:10.0pt;color:#686868">Finding Out the Prototype</p>
+            <p style="margin:0in"><span style='font-family:"Libre Franklin";font-size:12.0pt;
+color:#686868'>There are a number of ways to find the prototype of an object. One way is to go via the constructor function&rsquo;s&nbsp;</span><span style="font-family:Consolas;font-size:10.0pt;color:#9B9FA6;background:#292D3E">prototype</span><span style='font-family:"Libre Franklin";font-size:12.0pt;color:#686868'>&nbsp;property:</span></p>
+            <p style='margin:0in;font-family:"Libre Franklin";font-size:12.0pt;color:#686868'>&nbsp;</p>
+            <p style='margin:0in;font-family:"Libre Franklin";font-size:12.0pt'><span style="color:#686868">raph</span><span style="color:#9575A9">.</span><span style="color:#686868">constructor</span><span style="color:#9575A9">.</span><span style="color:#686868">prototype</span><span style="color:#9575A9">;</span><span style="color:#8BB1C1">&lt;&lt;</span><span style="color:#686868"> Turtle </span><span style="color:#9575A9">{</span><span style="color:#686868"> attack</span><span style="color:#8BB1C1">: </span><span style="color:#9575A9">[</span><span style="color:#D0B98E">Function</span><span style="color:#9575A9">],</span><span style="color:#686868"> weapon</span><span style="color:#8BB1C1">: </span><span style="color:#B4C49E">&apos;Hands&apos; </span><span style="color:#9575A9">}</span></p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+        </div>
+    </div>
+</div>

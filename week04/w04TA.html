@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="script" href="script.js">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <div id="1a" onclick="clicked(this)" class="square row-1 a"></div>
+        <div id="1b" onclick="clicked(this)" class="square row-1 b"></div>
+        <div id="1c" onclick="clicked(this)" class="square row-1 c"></div>
+        <div id="2a" onclick="clicked(this)" class="square row-2 a"></div>
+        <div id="2b" onclick="clicked(this)" class="square row-2 b"></div>
+        <div id="2c" onclick="clicked(this)" class="square row-2 c"></div>
+        <div id="3a" onclick="clicked(this)" class="square row-3 a"></div>
+        <div id="3b" onclick="clicked(this)" class="square row-3 b"></div>
+        <div id="3c" onclick="clicked(this)" class="square row-3 c"></div>
+    </section>
+    <button onclick="resetGame()" id='resetButton'>RESET</button>
+
+    <script>
+        let turn = true;
+
+        function clicked(item) {
+            if (item.innerHTML == ""){
+                    if (turn == true){
+                    document.getElementById(item.id).innerHTML = "X";
+                    turn = false;
+                } else {
+                    document.getElementById(item.id).innerHTML = "O";
+                    turn = true
+                }
+            }            
+        }
+
+        function resetGame(){
+            let elements = document.getElementsByClassName('square');
+            for (let x in elements) {
+                elements.item(x).innerHTML = "";
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    /* padding: 0; */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* column-gap: 10px; */
+    max-width: 300px;
+    /* max-height: 33vw; */
+}
+
+.square {
+    width: 100%;
+    height: 33vw;
+    max-height: 100px;
+    background-color: grey;
+    text-align: center;
+    text-justify: center;
+    line-height: 33vw;
+    font-family: 'Franklin Gothic';
+    font-size: 3rem;
+
+    /* Avoids selecting a piece after placing it */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
+}
+
+
+.row-2{
+    border-top: medium solid black;
+    border-bottom: medium solid black;
+}
+.b {
+    border-right: medium solid black;
+    border-left: medium solid black;
+}
+.c {
+    margin-left: 6px;
+}
+
+#resetButton {
+    margin: 1rem;
+    padding: 1rem;
+}
