@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Week 05</title>
+</head>
+<body>
+    <p></p>
+<div style="direction:ltr;border-width:100%">
+    <div style="direction:ltr;margin-top:0in;margin-left:0in;width:7.3541in">
+        <div style="direction:ltr;margin-top:0in;margin-left:0in;width:6.6041in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">STRICT MODE</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">strict mode that produces more exceptions and warnings and prohibits the use of some deprecated features.</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&apos;use strict&apos;;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">**Add it in the first line of the code</p>
+            <p style="margin:0in;margin-left:.75in"><span style="font-family:Calibri;
+font-size:11.0pt">Placing&nbsp;</span><span style="font-family:Consolas;
+font-size:10.0pt;color:#9B9FA6;background:#292D3E">&apos;use strict&apos;</span><span style="font-family:Calibri;font-size:11.0pt">&nbsp;at the beginning of a file will enforce strict mode on all the JavaScript in the file. And if you&rsquo;re using anybody else&rsquo;s code, there&rsquo;s no guarantee they&rsquo;ve coded in strict mode. This technique will ensure that only your code is forced to use strict mode.</span></p>
+        </div>
+        <div style="direction:ltr;margin-top:.9368in;margin-left:.459in;width:6.8951in">
+            <ul style="direction:ltr;unicode-bidi:embed;margin-top:0in;margin-bottom:0in">
+                <ul style="direction:ltr;unicode-bidi:embed;margin-top:0in;
+  margin-bottom:0in" type="disc">
+                    <li style="margin-top:0;margin-bottom:0;vertical-align:middle"><span style='font-family:"Libre Franklin";font-size:12.0pt'>The&nbsp;</span><span style="font-family:Consolas;font-size:10.0pt;background:#292D3E">console.trace()</span><span style='font-family:"Libre Franklin";font-size:12.0pt'>&nbsp;method will log an interactive stack trace in the console. This will show the functions that were called in the lead up to an exception occurring while the code is running.</span></li>
+                </ul>
+            </ul>
+        </div>
+        <div style="direction:ltr;margin-top:.8826in;margin-left:.75in;width:6.6041in">
+            <p style="margin:0in"><span style="font-family:Calibri;font-size:11.0pt">One of the most useful commands is the&nbsp;</span><span style="font-family:Consolas;
+font-size:10.0pt;color:#9B9FA6;background:#292D3E">debugger</span><span style="font-family:Calibri;font-size:11.0pt">&nbsp;keyword. This will create a breakpoint in your code that will pause the execution of the code and allow you to see where the program is currently up to. You can also hover over any variables to see what value they hold at that point. The program can then be restarted by clicking on the &apos;play&apos; button.</span></p>
+        </div>
+        <div style="direction:ltr;margin-top:.9923in;margin-left:.25in;width:6.6041in">
+            <p style="margin:0in;font-family:Roboto;font-size:10.0pt">Error Objects</p>
+            <p style="margin:0in;font-family:Roboto;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in"><span style='font-family:"Libre Franklin";
+font-size:12.0pt'>An&nbsp;</span><span style="font-family:Consolas;font-size:
+10.0pt;background:#292D3E">error</span><span style='font-family:"Libre Franklin";
+font-size:12.0pt'>&nbsp;object can be created by the host environment when an exception occurs, or it can be created in the code using a constructor function, like so:</span></p>
+            <p style="margin:0in;margin-left:.75in;font-family:inherit;font-size:12.0pt">Copy</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt"><span style="font-style:italic;background:#292D3E">const</span><span style="background:#292D3E"> error = </span><span style="font-style:italic;
+background:#292D3E">new</span><span style="background:#292D3E"> Error();</span></p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <ul style="direction:ltr;unicode-bidi:embed;margin-top:0in;
+ margin-bottom:0in" type="disc">
+                <li style="margin-top:0;margin-bottom:0;vertical-align:middle;color:#9B9FA6"><span style="font-family:Consolas;font-size:10.0pt;color:#9B9FA6;background:
+     #292D3E">EvalError</span><span style='font-family:"Libre Franklin";
+     font-size:12.0pt;color:#686868'>&nbsp;is not used in the current ECMAScript specification and only retained for backwards compatibility. It was used to identify errors when using the global&nbsp;</span><span style="font-family:Consolas;font-size:10.0pt;color:#9B9FA6;background:
+     #292D3E">eval()</span><span style='font-family:"Libre Franklin";
+     font-size:12.0pt;color:#686868'>&nbsp;function.</span></li>
+                <li style="margin-top:0;margin-bottom:0;vertical-align:middle;color:#9B9FA6"><span style="font-family:Consolas;font-size:10.0pt;color:#9B9FA6;background:
+     #292D3E">RangeError</span><span style='font-family:"Libre Franklin";
+     font-size:12.0pt;color:#686868'>&nbsp;is thrown when a number is outside an allowable range of values.</span></li>
+                <li style="margin-top:0;margin-bottom:0;vertical-align:middle;color:#9B9FA6"><span style="font-family:Consolas;font-size:10.0pt;color:#9B9FA6;background:
+     #292D3E">ReferenceError</span><span style='font-family:"Libre Franklin";
+     font-size:12.0pt;color:#686868'>&nbsp;is thrown when a reference is made to an item that doesn&rsquo;t exist. For example, calling a function that hasn&apos;t been defined.</span></li>
+                <li style="margin-top:0;margin-bottom:0;vertical-align:middle;color:#9B9FA6"><span style="font-family:Consolas;font-size:10.0pt;color:#9B9FA6;background:
+     #292D3E">SyntaxError</span><span style='font-family:"Libre Franklin";
+     font-size:12.0pt;color:#686868'>&nbsp;is thrown when there&rsquo;s an error in the code&rsquo;s syntax.</span></li>
+                <li style="margin-top:0;margin-bottom:0;vertical-align:middle;color:#9B9FA6"><span style="font-family:Consolas;font-size:10.0pt;color:#9B9FA6;background:
+     #292D3E">TypeError</span><span style='font-family:"Libre Franklin";
+     font-size:12.0pt;color:#686868'>&nbsp;is thrown when there&rsquo;s an error in the type of value used; for example, a string is used when a number is expected.</span></li>
+                <li style="margin-top:0;margin-bottom:0;vertical-align:middle;color:#9B9FA6"><span style="font-family:Consolas;font-size:10.0pt;color:#9B9FA6;background:
+     #292D3E">URIError</span><span style='font-family:"Libre Franklin";
+     font-size:12.0pt;color:#686868'>&nbsp;is thrown when there&rsquo;s a problem encoding or decoding the URI.</span></li>
+                <li style="margin-top:0;margin-bottom:0;vertical-align:middle;color:#9B9FA6"><span style="font-family:Consolas;font-size:10.0pt;color:#9B9FA6;background:
+     #292D3E">InternalError</span><span style='font-family:"Libre Franklin";
+     font-size:12.0pt;color:#686868'>&nbsp;is a non-standard error that is thrown when an error occurs in the JavaScript engine. A common cause of this too much recursion.</span></li>
+            </ul>
+            <p style='margin:0in;margin-left:.375in;font-family:"Libre Franklin";
+font-size:12.0pt;color:#686868'>These error objects can also be used as constructors to create custom error objects:</p>
+            <p style="margin:0in;margin-left:.375in;font-family:inherit;font-size:12.0pt;
+color:#686868">Copy</p>
+            <p style="margin:0in;margin-left:.375in;font-family:Consolas;font-size:10.0pt"><span style="font-style:italic;color:#9B9FA6;background:#292D3E">const</span><span style="color:#9B9FA6;background:#292D3E"> error </span><span style="color:#8BB1C1;
+background:#292D3E">= </span><span style="font-style:italic;color:#9B9FA6;
+background:#292D3E">new </span><span style="color:#D0B98E;background:#292D3E">TypeError</span><span style="color:#9575A9;background:#292D3E">(</span><span style="color:#B4C49E;
+background:#292D3E">&apos;You need to use numbers in this function&apos;</span><span style="color:#9575A9;background:#292D3E">);</span></p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Consolas;font-size:10.0pt">TRY, CATCH AND FINALLY</p>
+            <p style="margin:0in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">function imaginarySquareRoot(number) {</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>&apos;use strict&apos;;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>let answer;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>try {</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>answer = String(squareRoot(number));</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>} catch(error) {</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>answer = squareRoot(-number)+&quot;i&quot;;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>} finally {</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return `+ or - ${answer}`;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">}</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">JEST</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:12.0pt">Makes it easy to create and run tests by providing helper methods for common test assertions.</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri"><span style="font-size:12.0pt">To use Jest, first we need to install it using&nbsp;</span><span style="font-size:10.0pt;background:#292D3E">npm</span><span style="font-size:
+12.0pt">. Enter the following command in a terminal:</span></p>
+            <p style="margin:0in;margin-left:.75in"><span style="font-family:inherit;
+font-size:12.0pt;color:#686868"><br>
+                </span><span style="font-family:Calibri;font-size:11.0pt">npm install -g jest</span></p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">jest -v</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&lt;&lt; v19.0.2</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt;
+color:#9B9FA6">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">function squareRoot(number) {</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>&apos;use strict&apos;;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>if (number &lt; 0) {</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>throw new RangeError(&quot;You can&apos;t find the square root of negative numbers&quot;)</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>return Math.sqrt(number);</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">};</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">test(&apos;square root of 4 is 2&apos;, () =&gt; {</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">expect(squareRoot(4)).toBe(2);</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">});</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;margin-left:.75in;font-family:Consolas;font-size:10.0pt">&nbsp;</p>
+        </div>
+    </div>
+</div><br>
+<p></p>
+</body>
+</html>
