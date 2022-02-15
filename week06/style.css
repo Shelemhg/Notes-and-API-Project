@@ -1,0 +1,27 @@
+
+
+
+section {
+    width: vw;
+    align-items: center;
+    margin: 2rem;
+}
+div {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+/* .add-wrapper {
+    position: absolute;
+    align-self: ;
+} */
+
+.task-wrapper {
+    min-width: 200px;
+    display: flex;
+
+}
+button {
+    margin-left: auto;
+}
