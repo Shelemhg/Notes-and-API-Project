@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example w07</title>
+</head>
+<body>
+    <p id="output">
+
+    </p>
+
+    <script>
+
+
+
+        window.onload = example1();
+        
+        function example1(){
+            const object1 = {name: 'Peter'};
+            console.log(sayHello.call(object1));
+            var text1 = sayHello.call(object1);
+
+            document.getElementById('output').innerHTML = text1;
+        }
+
+        function sayHello(){
+            return `Hello, my name is ${ this.name }`;
+        }
+
+
+    </script>
+</body>
+</html>
