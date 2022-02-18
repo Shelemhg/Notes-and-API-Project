@@ -14,6 +14,13 @@ window.addEventListener("load", () => {
 } );
 
 myHikes.hikeList;
+let commentList
+
+function displayComments(){
+    for(comment in Comments){
+
+    }
+}
 
 function saveData(){
     var hikeName = document.getElementById("name").value;
@@ -24,5 +31,7 @@ function saveData(){
 
     return false;
 }
+
+
 
 document.getElementById("submit-btn").addEventListener("click", saveData);
