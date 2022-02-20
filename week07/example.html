@@ -31,5 +31,88 @@
 
 
     </script>
+
+<p></p>
+<div style="direction:ltr;border-width:100%">
+    <div style="direction:ltr;margin-top:0in;margin-left:0in;width:7.5in">
+        <div style="direction:ltr;margin-top:0in;margin-left:0in;width:7.5in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">*For more info check chapter 4</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Functions can accept other functions as parameters and be returned by other functions as well.</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in"><span style="font-family:Calibri;font-size:11.0pt">If the function that&rsquo;s called requires any parameters, these need to be provided as arguments after the first argument, which is always the value of&nbsp;</span><span style="font-family:Consolas;font-size:10.0pt;color:#9A9EA5;background:#292D3D">this</span><span style="font-family:Calibri;font-size:11.0pt">.</span></p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in"><span style="font-family:Calibri;font-size:11.0pt;
+background:yellow;mso-highlight:yellow">The&nbsp;</span><span style="font-family:
+Consolas;font-size:10.0pt;color:#9A9EA5;background:yellow;mso-highlight:yellow">call()</span><span style="font-family:Calibri;font-size:11.0pt;background:yellow;mso-highlight:
+yellow">&nbsp;method can be used to set the value of&nbsp;</span><span style="font-family:Consolas;font-size:10.0pt;color:#9A9EA5;background:yellow;
+mso-highlight:yellow">this</span><span style="font-family:Calibri;font-size:
+11.0pt;background:yellow;mso-highlight:yellow">&nbsp;inside a function to an object that is provided as the first argument.</span></p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">The spread operator can be used to split an array of values into separate parameters.</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">MEMOIZATION</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Save results of certain parameters in the cache memory.</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">function square(x){</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>square.cache = square.cache || {};</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>if (!square.cache[x]) {</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>square.cache[x] = x*x;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>return square.cache[x]</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">}</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+        </div>
+    </div>
+</div>
+<p><br></p>
+<p><br></p>
+<p></p>
+<div style="direction:ltr;border-width:100%">
+    <div style="direction:ltr;margin-top:0in;margin-left:0in;width:1.8923in">
+        <div style="direction:ltr;margin-top:0in;margin-left:0in;width:1.8923in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">square(3);</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&lt;&lt; 9</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">square(-11);</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&lt;&lt; 121</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">square.cache;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&lt;&lt; {&quot;3&quot;: 9, &quot;-11&quot;: 121}</p>
+        </div>
+    </div>
+</div>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p></p>
+<div style="direction:ltr;border-width:100%">
+    <div style="direction:ltr;margin-top:0in;margin-left:0in;width:4.9659in">
+        <div style="direction:ltr;margin-top:0in;margin-left:0in;width:4.9659in">
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Immediately Invoked Function Expression &ndash; or IIFE &ndash; (pronounced &apos;iffy&apos;)</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">(function(){</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">const temp = &apos;World&apos;;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">console.log(`Hello ${temp}`);</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">})();</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&lt;&lt; &apos;Hello World&apos;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+            <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+        </div>
+    </div>
+</div><br>
+<p></p>
 </body>
 </html>
