@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 08</title>
+    <style>
+        h1 {
+            color:red;
+        }
+        p {
+            color:lightgray;
+            width: 700px;
+            text-align: justify;
+            margin: 2rem;
+        }
+        .sqr {
+            font-size: 2rem;
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            transform: translate(100px, 100px) skew(15deg, 4deg);
+            transition-property: transform, color; 
+            transition-duration: 0.2s, 0.1s;  
+            transition-timing-function: ease-out, linear;
+            transition-delay: 50ms;
+
+            transition: transform 0.2s ease-out 50ms, color 0.1s linear 50ms;
+            /* transition: all 0.2s ease-out 50ms; */
+        }        
+        .sqr:hover {
+            transform:  rotate(-10deg) translate(100px, 100px) scale(1.5) skew(15deg, 4deg);
+            transform-origin: 10 100;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="sqr">Hi 1</div>
+    <h1>Put your <span>dukes</span> up, sire</h1>
+    <p>Note that you shouldn’t declare a new transform: because of the cascade, a second transform would override the first.</p>
+    <hr>
+    <h1>Transitions</h1>
+    <h3>Any property changing from one value to another for which you can find a valid midpoint can be transitioned.</h3>
+    <p>Animation is possible with JavaScript, but native CSS transitions generally require less client-side processing, so they’ll usually appear smoother. On mobile devices with limited computing power, this can be a lifesaver.</p>
+    <p>1. Declare the original state of the element in the default style declaration.<br><br>
+
+        2. Declare the final state of your transitioned element; for example, a :hover state.<br><br>
+        
+        3. Include the transition functions in your default style declaration using the transition properties, including: transition-property, transition-duration, transition-timing-function, and transition-delay. We’ll look at each of these and how they work shortly.<br><br></p>
+    
+
+    <hr>
+    <style>
+        
+        @keyframes moveRight { 
+            from {
+            transform: translateX(-50%);
+            }
+            to {
+            transform: translateX(50%);
+            }
+        }
+
+        @keyframes appearDisappear { 
+            0%, 100% {
+            opacity: 0;
+            }
+            20%, 80% {
+            opacity: 1;
+            }
+        }
+
+        @keyframes bgMove {
+            100% {
+            background-position: 120% 0;
+            }
+        }        
+        .verbose {
+            animation-name: appearDisappear; 
+            animation-duration: 300ms; 
+            animation-timing-function: ease-in;
+            animation-iteration-count: 1;
+            animation-direction: alternate;
+            animation-delay: 5s;
+            animation-fill-mode: backwards;
+            animation-play-state: running;
+        }
+
+        /* shorthand */
+        .concise {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            animation: 300ms ease-in alternate 5s backwards appearDisappear;
+        }
+    </style>
+    <h2>Animations</h2>
+    <p></p>
+    <div class="concise">Hi</div>
+
+    <hr>
+
+    <style>
+        .myCanvas {
+            border: dotted 2px black;
+        }
+    </style>
+    
+    <h2>Canvas</h2>
+    <p>The first step to using canvas is to add a canvas element to the page:</p>
+    <canvas id="myCanvas" class="myCanvas" onload='drawGradient()' width="200" height="200">
+        Sorry! Your browser doesn’t support Canvas.
+    </canvas>
+    <p>The text in between the canvas tags will only be shown if the canvas element is not supported by the visitor’s browser.</p>
+    <script>
+        var canvas = document.getElementById("myCanvas"); 
+        var context = canvas.getContext("2d"); 
+        context.strokeStyle = "red";
+        context.fillStyle = "rgba(0, 0, 255, 0.5)";
+        context.fillRect(10, 10, 100, 100);   
+        context.strokeRect(10, 10, 100, 100);
+
+
+        function drawGradient(){
+            var canvas = document.getElementById("demo3");
+            var context = canvas.getContext("2d");
+            context.strokeStyle = "red";
+            var gradient = context.createLinearGradient(0, 0, 0, 200); 
+            gradient.addColorStop(0, "blue"); 
+            gradient.addColorStop(1, "white"); 
+            context.fillStyle = gradient; 
+            context.fillRect(10, 10, 100, 100); 
+            context.strokeRect(10, 10, 100, 100); 
+        }
+        function drawCircle(canvas) {
+            var context = canvas.getContext("2d");
+            context.beginPath();
+            context.arc(100, 100, 50, 0, Math.PI*2, true);
+            context.closePath();
+            context.strokeStyle = "red";
+            context.fillStyle = "blue";
+            context.lineWidth = 3;
+            context.fill(); 
+            context.stroke(); 
+        }
+    </script>
+
+    <hr>
+
+    <h2>SVG</h2>
+    <p></p>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+        <circle cx="50" cy="50" r="25" fill="red"/>
+    </svg>
+</body>
+</html>
+      
