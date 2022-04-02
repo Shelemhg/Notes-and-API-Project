@@ -1,6 +1,6 @@
-export function loadToDoList() {
+export function loadProductList() {
     if (localStorage.getItem("Comments") === null){
-        var Comments = [];
+        var Products = [];
         localStorage.setItem('Comments', JSON.stringify(Comments));
         console.log("Comments Creado");
     }else{
@@ -11,7 +11,7 @@ export function loadToDoList() {
     return Comments;
 }
 
-export class Comment {
+export class Product {
     constructor(hikeName, comment) {
         this.hikeName = hikeName;
         this.comment = comment;
@@ -19,9 +19,9 @@ export class Comment {
     }
 }
 
-export function saveComment(newComment, Comments){
+export function saveProduct(newProduct, Products){
 
-    Comments.push(newComment);
+    Comments.push(newProduct);
     localStorage.setItem('Comments', JSON.stringify(Comments));
 }
 
@@ -52,3 +52,4 @@ function newComment(hikeName, comment) {
 // addSubmitListener() {
 //     //add a listener to a button created 
 // }
+
