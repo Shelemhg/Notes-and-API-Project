@@ -33,11 +33,14 @@ img {
 }
 #productUrl {
     line-height: 2rem;
-    padding: .5rem 3px ;
+    padding: .5rem 5px ;
     font-size: 1.3rem;
     border-radius: 15px;
     margin: .5rem 0;
     border-style: none ;
+}
+#comment{
+    padding: .5rem 5px ;
 }
 .add-section{
     background-color: rgb(184, 184, 184);
