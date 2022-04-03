@@ -49,7 +49,10 @@ export async function addNewProduct(){
                 product.app_sale_price,
                 product.product_main_image_url,
                 product.available_quantity,
-                `https://www.amazon.com/gp/product/${ansi}/`);            
+                `https://www.amazon.com/gp/product/${ansi}/`,
+                document.getElementById("comment").value);       
+            document.getElementById("productUrl").value = "";
+            document.getElementById("comment").value = "";     
             saveProduct(newProduct, Products);
             changeColor('green');
             displayMessage("Product added succesfully");

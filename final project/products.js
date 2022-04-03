@@ -55,14 +55,15 @@ export function displayMessage(msg){
 
 
 export class Product {
-    constructor(id, title, price, imageUrl, quantity, url) {
+    constructor(id, title, price, imageUrl, quantity, url, comment) {
         this.id = id;
         this.title = title;
         this.price = price;
         this.date = Date();  
         this.imageUrl = imageUrl; 
         this.quantity = quantity;
-        this.url = url;  
+        this.url = url;
+        this.comment = comment; 
     }
 }
 
@@ -83,12 +84,18 @@ export function renderProducts(Products){
     var dp = '';
 
     for (let i=0; i < Products.length; i++){
+        if(Products[i].comment){
+            var comment = Products[i].comment;
+        }else{
+            var comment = "";
+        }
         dp += '<div class="product-wrapper">';
         dp += `<div class="img-wrapper"><img src="${Products[i].imageUrl}"></div>`;
         dp += `<div class="info-wrapper"><h3>${Products[i].title}</h3>`;
         dp += `<a href="${Products[i].url}" target="_blank">${Products[i].url}</a>`;        
         dp += `<p>ANSI: ${Products[i].id}</p>`;
         dp += `<p>Stock: ${Products[i].quantity}</p>`;
+        dp += `<p>Comment: ${comment}</p>`;
         dp += `<div class="date-item">Date Consulted: ${Products[i].date}</div></div>`;
         dp += `<div class="price-wrapper"><h3>$ ${Products[i].price}</h3></div>`;
         dp += `<div class="buttons-wrapper"><button id="delete-${i}" class="delete-btn">Delete</button>`;
