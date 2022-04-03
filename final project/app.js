@@ -5,6 +5,7 @@ import {displayMessage} from "./products.js";
 import {displayProducts} from "./products.js";
 import {getAnsi} from "./products.js";
 import {getInfo} from "./products.js";
+import {deleteProduct} from "./products.js";
 
 var Products = [];
 
@@ -13,7 +14,7 @@ window.addEventListener("load", () => {
     // window.localStorage.clear();
     Products = loadProductList();    
     // console.log(Products[1].id);
-    document.getElementById('result').innerHTML = displayProducts(Products);
+    displayProducts(Products);
 } );
 
 async function addNewProduct(){
@@ -27,20 +28,19 @@ async function addNewProduct(){
         var ansi = getAnsi(productUrl);
         // SEND REQUEST
         const product = await getInfo(ansi);
-        // console.log("RESPONSE: " + product);
-        if(product.title === undefined){  
+
+        if(product.product_title === undefined){  
+            document.getElementById('ansi').innerHTML = ansi;
             displayMessage("Error finding item. Please check the URL or try a different one.");
         }else{
-            console.log("correct response obtained");
+            console.log("Saving new product");
             // SAVE product
             const newProduct = new Product(
                 product.product_id, 
                 product.product_title, 
                 product.app_sale_price,
                 product.product_main_image_url,
-                product.available_quantity);
-
-            
+                product.available_quantity);            
             saveProduct(newProduct, Products);
         }
 
@@ -54,8 +54,11 @@ async function addNewProduct(){
     }else{
         displayMessage("Please enter a valid URL");
     }
+    displayProducts(Products);
 
     return false;
 }
+
+
 
 document.getElementById("submit-btn").addEventListener("click", addNewProduct);

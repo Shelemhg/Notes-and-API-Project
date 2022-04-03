@@ -7,11 +7,8 @@ export function loadProductList() {
     }else{
         var Products = JSON.parse(localStorage.getItem('Products'));
         console.log("Products ya existe");
-        
-        // Products = delete Products[0];
-        // localStorage.setItem('Products', JSON.stringify(Products));
-        console.table(Products);
     }
+    // console.table(Products);
     return Products;
 }
 
@@ -87,7 +84,7 @@ export function saveProduct(newProduct, Products){
     Products.push(newProduct);
     localStorage.setItem('Products', JSON.stringify(Products));
 
-    console.table(Products);
+    // console.table(Products);
     return false;
 }
 
@@ -117,6 +114,13 @@ export class Product {
     }
 }
 
+function addEveLis(Products){
+    for (let i = 0; i < Products.length; ++i) {
+        var elem = document.getElementById('delete-' + i);
+        elem.addEventListener('click', function(event){deleteProduct('Products',i);});
+    }
+}
+
 export function displayProducts(Products){
     var dp = '';
 
@@ -124,12 +128,23 @@ export function displayProducts(Products){
         dp += '<div class="product-wrapper">';
         dp += `<h3>${Products[i].title}</h3>`;
         dp += `<p>${Products[i].id}</p>`;
+        dp += `<button id="delete-${i}">Delete</button>`;
         dp += '</div>';
     }
-
-    return dp;
+    document.getElementById('result').innerHTML = dp;
+    addEveLis(Products);
+    console.table(Products);
+    return false;
 }
 
-
-
+export function deleteProduct(ArrayName, item){
+// export function deleteProduct(){
+    var Products = JSON.parse(localStorage.getItem(ArrayName));
+    console.log("Delete item: " + item);
+    console.log(Products);
+    Products.splice(item);
+    localStorage.setItem('Products', JSON.stringify(Products));    
+    displayProducts(Products);
+    return false;
+}
 
