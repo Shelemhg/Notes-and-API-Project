@@ -2,22 +2,28 @@ import { Product } from "./products.js";
 import {saveProduct} from "./products.js";
 import {loadProductList} from "./products.js";
 import {displayMessage} from "./products.js";
-import {displayProducts} from "./products.js";
+import {renderProducts} from "./products.js";
 import {getAnsi} from "./products.js";
 import {getInfo} from "./products.js";
-import {deleteProduct} from "./products.js";
 
 var Products = [];
 
-
 window.addEventListener("load", () => {
-    // window.localStorage.clear();
     Products = loadProductList();    
-    // console.log(Products[1].id);
-    displayProducts(Products);
+    renderProducts(Products);
 } );
 
-async function addNewProduct(){
+function changeColor(color){
+    document.getElementById('message').classList.remove('white');    
+    document.getElementById('message').classList.remove('green');
+    document.getElementById('message').classList.remove('yellow');
+    document.getElementById('message').classList.remove('red');
+    document.getElementById('message').classList.add(color);
+    return false;
+}
+
+export async function addNewProduct(){
+    changeColor('white');
     var productUrl = document.getElementById("productUrl").value;
     var exp = /https:\/\/www.amazon.com\/*/ig;
     var correctUrl = productUrl.match(exp);
@@ -26,11 +32,13 @@ async function addNewProduct(){
     if(correctUrl){
         console.log("URL matches amazon site");
         var ansi = getAnsi(productUrl);
+        changeColor('yellow');
+        displayMessage("Retriving information");
         // SEND REQUEST
         const product = await getInfo(ansi);
 
-        if(product.product_title === undefined){  
-            document.getElementById('ansi').innerHTML = ansi;
+        if(product.product_title === undefined){
+            changeColor('red');
             displayMessage("Error finding item. Please check the URL or try a different one.");
         }else{
             console.log("Saving new product");
@@ -40,22 +48,18 @@ async function addNewProduct(){
                 product.product_title, 
                 product.app_sale_price,
                 product.product_main_image_url,
-                product.available_quantity);            
+                product.available_quantity,
+                `https://www.amazon.com/gp/product/${ansi}/`);            
             saveProduct(newProduct, Products);
-        }
-
-        
-
-        Products = loadProductList();    
-        // // console.log(Products[1].id);
-        // document.getElementById('result').innerHTML = displayProducts(Products);
-        
-        // displayInfo(productInfo);
+            changeColor('green');
+            displayMessage("Product added succesfully");
+        }  
+        Products = loadProductList();
     }else{
+        changeColor('red');
         displayMessage("Please enter a valid URL");
     }
-    displayProducts(Products);
-
+    renderProducts(Products); // Display Products on Screen
     return false;
 }
 
