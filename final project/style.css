@@ -62,6 +62,9 @@ img {
 p, a{
     font-size: 1.3rem;
 }
+a{
+    color: #fb9701;
+}
 .date-item{
     font-size: 1rem;
     margin: 3rem 0;
@@ -108,10 +111,11 @@ button:hover {
   }
   #submit-btn{
       background-color: green;
+      color: #fff;
   }
   .delete-btn{
       background-color: rgb(153, 0, 0);
-      color: rgb(206, 206, 206);
+      color: rgb(255, 255, 255);
   }
 
 
@@ -185,7 +189,7 @@ button:hover {
     color: green;
 }
 .yellow {
-    color: yellow;
+    color: rgb(255, 230, 0);
 }
 .white {
     color: white;

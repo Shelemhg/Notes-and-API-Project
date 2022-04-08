@@ -65,10 +65,15 @@ export function displayInfo(response){
     return false;
 }
 
-export function displayMessage(msg){
+export function displayMessage(msg, color){
     document.getElementById('message').innerHTML = msg;
+    //  Removes all color classes and ad a new one sent as argument
+    document.getElementById('message').classList.remove('white');    
+    document.getElementById('message').classList.remove('green');
+    document.getElementById('message').classList.remove('yellow');
+    document.getElementById('message').classList.remove('red');
+    document.getElementById('message').classList.add(color);
 }
-
 
 export class Product {
     constructor(id, title, price, imageUrl, quantity, url, comment) {
@@ -84,7 +89,14 @@ export class Product {
     }
 }
 function addGraph(Product){
-
+    //   Plot graph        
+    let data = [{x:[], y:[], type: 'scatter'}];
+    let layout = {title: 'Price History', yaxis:{title: "Price in USD"}};
+    for(let d = 0; Product.price.length > d; d++){                
+        data[0].x.push(Product.date[d]);
+        data[0].y.push("$ " + Product.price[d]);
+    }
+    Plotly.newPlot(`graph-${Product.id}`, data, layout);
 
 }
 
@@ -99,18 +111,8 @@ function addEveLis(Products){
             document.getElementById("productUrl").value = Products[i].url;
             addNewProduct();
         });
-
-
-        //   Plot graph
         if(Products[i].date.length > 1){
-
-            let data = [{x:[], y:[], type: 'scatter'}];
-            let layout = {title: 'Price History', yaxis:{title: "Price in USD"}};
-            for(let d = 0; Products[i].price.length > d; d++){                
-                data[0].x.push(Products[i].date[d]);
-                data[0].y.push("$ " + Products[i].price[d]);
-            }
-            Plotly.newPlot(`graph-${Products[i].id}`, data, layout);
+            addGraph(Products[i]);
         }
     }
 }
@@ -131,9 +133,8 @@ export function renderProducts(Products){
         dp += `<p>Stock: ${Products[i].quantity}</p>`;
         dp += `<p>Comment: ${comment}</p></div>`;
         dp += `<div class="info-wrapper"><h3>${Products[i].title}</h3>`;
-
-
-        // console.log("Price length of " + Products[i].id + ": " +Products[i].price.length);
+        
+        //  Check if the product has more than 1 price, if so, add div for graph
         if(Products[i].price.length > 1){
             let max = Products[i].price.length;
             dp += `<div id="graph-${Products[i].id}" class="graph"></div></div>`;
@@ -161,6 +162,20 @@ export function deleteProduct(ArrayName, item){
     Products.splice(item, 1);
     localStorage.setItem('Products', JSON.stringify(Products));    
     renderProducts(Products);
+    return false;
+}
+
+export function searchID(newProduct, Products){
+    find: {
+        for(let i=0; i<Products.length; i++){
+            if(newProduct.id == Products[i].id){
+                addPriceHistory(newProduct, i, Products);
+                break find;
+            }
+        }
+        saveProduct(newProduct, Products);
+    }
+
     return false;
 }
 
