@@ -41,6 +41,13 @@ export function saveProduct(newProduct, Products){
     return false;
 }
 
+export function addPriceHistory(newProduct, index, Products){
+    Products[index].price.push(newProduct.price[0]);
+    Products[index].date.push(newProduct.date[0]);
+    localStorage.setItem('Products', JSON.stringify(Products));
+    return false;
+}
+
 export function displayInfo(response){
     var Products = JSON.parse(localStorage.getItem('Products'));
     console.log("Ahi viene Products");
@@ -58,25 +65,44 @@ export class Product {
     constructor(id, title, price, imageUrl, quantity, url, comment) {
         this.id = id;
         this.title = title;
-        this.price = price;
-        this.date = Date();  
+        // this.price = [{date: Date.getTime()];
+        this.price = [price];
+        this.date = [Date()];  
         this.imageUrl = imageUrl; 
         this.quantity = quantity;
         this.url = url;
         this.comment = comment; 
     }
 }
+function addGraph(Product){
+
+
+}
 
 function addEveLis(Products){
     for (let i = 0; i < Products.length; ++i) {
-        var elem = document.getElementById('delete-' + i);
-        elem.addEventListener('click', function(event){deleteProduct('Products',i);});
-        var check = document.getElementById('check-' + i);
-        check.addEventListener('click', function(event){
+        var elem = document.getElementById('delete-' + i); //  Grabs element delete-i
+        elem.addEventListener('click', function(event){deleteProduct('Products',i);}); //  Adds the action OnClick of activatiing deleteProductFunction();
+
+        var check = document.getElementById('check-' + i);// Grabs element and adds Check again event
+        check.addEventListener('click', function(event){ //  Clear input and sends URL to be checked again
             document.getElementById("productUrl").value = "";
             document.getElementById("productUrl").value = Products[i].url;
             addNewProduct();
         });
+
+
+        //   Plot graph
+        if(Products[i].date.length > 1){
+
+            let data = [{x:[], y:[], type: 'scatter'}];
+            let layout = {title: 'Price History', yaxis:{title: "Price in USD"}};
+            for(let d = 0; Products[i].price.length > d; d++){                
+                data[0].x.push(Products[i].date[d]);
+                data[0].y.push("$ " + Products[i].price[d]);
+            }
+            Plotly.newPlot(`graph-${Products[i].id}`, data, layout);
+        }
     }
 }
 
@@ -96,8 +122,18 @@ export function renderProducts(Products){
         dp += `<p>ANSI: ${Products[i].id}</p>`;
         dp += `<p>Stock: ${Products[i].quantity}</p>`;
         dp += `<p>Comment: ${comment}</p>`;
-        dp += `<div class="date-item">Date Consulted: ${Products[i].date}</div></div>`;
-        dp += `<div class="price-wrapper"><h3>$ ${Products[i].price}</h3></div>`;
+
+        // console.log("Price length of " + Products[i].id + ": " +Products[i].price.length);
+        if(Products[i].price.length > 1){
+            let max = Products[i].price.length;
+            dp += `<div id="graph-${Products[i].id}" class="graph"></div></div>`;
+            // dp += `<div class="price-wrapper"><h3>$ ${Products[i].price}</h3></div>`;
+            dp += `<div class="price-wrapper"><h3>$ ${Products[i].price[max-1]}</h3></div>`;
+        }else{
+            dp += `<div class="date-item">Date Consulted: ${Products[i].date}</div></div>`;
+            dp += `<div class="price-wrapper"><h3>$ ${Products[i].price}</h3></div>`;
+        }
+
         dp += `<div class="buttons-wrapper"><button id="delete-${i}" class="delete-btn">Delete</button>`;
         dp += `<button id="check-${i}">Check Price Now</button></div>`;
         dp += '</div><hr>';
