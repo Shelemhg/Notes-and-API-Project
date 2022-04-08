@@ -13,8 +13,17 @@ export function loadProductList() {
 }
 
 export function getAnsi(productUrl){
-    var index =  productUrl.split('/', 5).join('/').length;
-    var ansi = productUrl.slice(index+1, index+11);
+    // var index =  productUrl.split('/', 5).join('/').length;
+    // var ansi = productUrl.slice(index+1, index+11);
+    
+    var index = productUrl.indexOf("/dp/");
+    if(index > 1){
+        var ansi = productUrl.slice(index+4, index+14);
+    }else{
+        index = productUrl.indexOf("/product/");
+        var ansi = productUrl.slice(index+9, index+19);
+    }
+
     return ansi;
 }
 
@@ -116,12 +125,13 @@ export function renderProducts(Products){
             var comment = "";
         }
         dp += '<div class="product-wrapper">';
-        dp += `<div class="img-wrapper"><img src="${Products[i].imageUrl}"></div>`;
-        dp += `<div class="info-wrapper"><h3>${Products[i].title}</h3>`;
+        dp += `<div class="img-wrapper"><img src="${Products[i].imageUrl}">`;
         dp += `<a href="${Products[i].url}" target="_blank">${Products[i].url}</a>`;        
         dp += `<p>ANSI: ${Products[i].id}</p>`;
         dp += `<p>Stock: ${Products[i].quantity}</p>`;
-        dp += `<p>Comment: ${comment}</p>`;
+        dp += `<p>Comment: ${comment}</p></div>`;
+        dp += `<div class="info-wrapper"><h3>${Products[i].title}</h3>`;
+
 
         // console.log("Price length of " + Products[i].id + ": " +Products[i].price.length);
         if(Products[i].price.length > 1){

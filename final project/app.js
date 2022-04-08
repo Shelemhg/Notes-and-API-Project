@@ -36,6 +36,8 @@ export async function addNewProduct(){
     if(correctUrl){
         console.log("URL matches amazon site");
         var ansi = getAnsi(productUrl);
+        // console.log("ANSI: " + ansi);
+
         changeColor('yellow');
         displayMessage("Retriving information");
 
